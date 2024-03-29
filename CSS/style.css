@@ -8,12 +8,11 @@ body::-webkit-scrollbar {
 
 .container {
     /* border: 2px solid red; */
+    position: relative;
     height: 97vh;
-    aspect-ratio: 2.13/1;
-
-    min-height: 218.587px;
-    max-height: 713.138px;
-
+    aspect-ratio: 16/9;
+    min-height: 350px;
+    max-height: 713px;
     margin: auto;
 }
 
@@ -21,4 +20,92 @@ body::-webkit-scrollbar {
     height: 100%;
     width: 100%;
     border-radius: 20px;
+}
+
+.layer {
+    position: absolute;
+    /*border: 2px solid red;*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-top {
+    /*border: 2px solid red;*/
+    /*width: 100%;*/
+    margin-top: 10px;
+    height: 10%;
+}
+
+.main-bottom {
+    /*border: 2px solid red;*/
+    height: 85%;
+    display: flex;
+}
+
+.logo-container {
+    border: 2px solid darkblue;
+    border-radius: 15px;
+    background-color: azure;
+    width: 13%;
+    height: 80%;
+    margin-left: 2%;
+}
+
+#logo {
+    height: 95%;
+    width: 97%;
+}
+
+.logo-container:hover {
+    cursor: pointer;
+}
+
+.logo-container:active {
+    cursor: progress;
+}
+
+.option-container {
+    /*border: 2px solid red;*/
+    margin: auto;
+    width: 90%;
+    height: 40%;
+    display: flex;
+}
+
+.options {
+    border: 4px solid darkblue;
+    border-radius: 15px;
+    background-color: cornflowerblue;
+    margin: auto;
+    width: 30%;
+    height: 90%;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+}
+
+.options:hover {
+    border-color: aqua;
+    background: black;
+    color: silver;
+}
+
+.options:active {
+    cursor: progress;
+    border-color: red;
+    background: black;
+    color: white;
+}
+
+.text-container {
+    /*border: 2px solid red;*/
+    width: 85%;
+    height: 30%;
+    margin: auto;
+    text-align: center;
+    font-family: cursive;
+    font-size: 100%;
+    font-weight: bolder;
 }
