@@ -10,6 +10,26 @@ const createAccount = () => {
     loadData(data);
 }
 
+const adjustAspectRatio = () => {
+    let form_container = document.getElementsByClassName('form-container')[0];
+    let detail_form = document.getElementsByClassName('upper-sub-division');
+    let width = form_container.offsetWidth;
+
+    if (width < 400) {
+        form_container.style.aspectRatio = `1`;
+        detail_form[0].style.width = `70%`;
+        if (detail_form[1])
+            detail_form[1].parentNode.removeChild(detail_form[1]);
+    }
+    else {
+        form_container.style.aspectRatio = `1.75`;
+        detail_form[0].style.width = `45%`;
+        loadData(create_account_form);
+    }
+}
+window.addEventListener("resize", adjustAspectRatio);
+adjustAspectRatio();
+
 const createAccountLogin = () => {
     let data = account_login_info;
     loadData(data);
@@ -20,16 +40,4 @@ const createAccountDelete = () => {
     loadData(data);
 }
 
-const adjustAspectRatio = () => {
-    let form_container = document.getElementsByClassName('form-container')[0];
-    let width = form_container.offsetWidth;
-
-    if (width < 338.263)
-        form_container.style.aspectRatio = `1 / 1.2`;
-    else
-        form_container.style.aspectRatio = `1.75`;
-
-}
-window.addEventListener("resize", adjustAspectRatio);
-adjustAspectRatio();
 

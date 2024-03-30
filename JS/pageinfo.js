@@ -5,8 +5,15 @@ const main_page_info = `<div class="option-container">
                                </div>`;
 
 const create_account_form = `<div class="form-container">
-                                        
-                                   </div>`;
+                                        <div class="form-division" id="upper">
+                                            <div class="sub-division upper-sub-division" id="upper-division-1"></div>
+                                            <div class="sub-division upper-sub-division" id="upper-division-2"></div>
+                                        </div>
+                                        <div class="form-division" id="lower">
+                                            <div class="sub-division lower-sub-division" id="lower-division-1"></div>
+                                            <div class="sub-division lower-sub-division" id="lower-division-2"></div>
+                                        </div>
+                                    </div>`;
 
 const account_login_info= ``;
 
