@@ -36,4 +36,56 @@
     border: 2px solid cadetblue;
     background-color: aquamarine;
     border-radius: 20px;
+    display: flex;
+}
+
+.lower-sub-division {
+    /*border: 2px solid red;*/
+    display: flex;
+}
+
+.buttons {
+    /*border: 2px solid red;*/
+    margin: auto;
+    user-select: none;
+    cursor: pointer;
+}
+
+.buttons:active {
+    cursor: progress;
+    font-weight: bolder;
+}
+
+.buttons p {
+    border: 3px solid gray;
+    background-color: silver;
+    border-radius: 30px;
+    padding: 5px 10px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.create-account-input-container {
+    /*border: 2px solid red;*/
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    /*border: 2px solid red;*/
+    margin: auto;
+    width: 80%;
+    height: 10%;
+}
+
+.input-container input {
+    border-radius: 15px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: cursive;
+    width: 100%;
 }
