@@ -1,12 +1,34 @@
 const logo_container = document.getElementsByClassName("logo-container")[0];
 const main_data = document.getElementsByClassName("main-bottom")[0];
-const main_ip = `http://localhost:63342`;
-logo_container.addEventListener("click", () => loadData(main_page_info))
+const client_ip = `http://localhost:63342`;
+const server_ip = `http://127.0.0.1:5000`;
+let server_active = false;
+let pagedata = ''
+fetch(server_ip, {mode: "cors"})
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        pagedata = data;
+        server_active = true;
+        loadData(pagedata['main_page_info'])
+    })
+    .catch(error => {
+        loadData(server_not_active);
+        console.log(error);
+    })
 
+logo_container.addEventListener("click", () => {
+    if (server_active)
+        loadData(pagedata['main_page_info']);
+})
 const loadData = (data) => main_data.innerHTML = data;
 
 const createAccount = () => {
-    let data = create_account_form;
+    let data = pagedata['create_account_form'];
     loadData(data);
 }
 
@@ -24,19 +46,23 @@ const adjustAspectRatio = () => {
     else {
         form_container.style.aspectRatio = `1.75`;
         detail_form[0].style.width = `45%`;
-        loadData(create_account_form);
+        loadData(pagedata['create_account_form']);
     }
 }
-window.addEventListener("resize", adjustAspectRatio);
-adjustAspectRatio();
+
+if (server_active) {
+    window.addEventListener("resize", adjustAspectRatio);
+    adjustAspectRatio();
+}
+
 
 const createAccountLogin = () => {
-    let data = account_login_info;
+    let data = pagedata['account_login_info'];
     loadData(data);
 }
 
 const createAccountDelete = () => {
-    let data = delete_account_form;
+    let data = pagedata['delete_account_form'];
     loadData(data);
 }
 
