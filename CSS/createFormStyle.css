@@ -1,0 +1,8 @@
+.form-container {
+    border: 2px solid darkblue;
+    background-color: aqua;
+    border-radius: 20px;
+    margin: auto;
+    width: 40%;
+    aspect-ratio: 1.75;
+}
