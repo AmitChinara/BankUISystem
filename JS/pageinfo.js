@@ -6,3 +6,5 @@ const server_ip = `http://127.0.0.1:5000`;
 let server_active = false;
 let pagedata = null;
 const input_container = document.getElementsByClassName("input-field");
+
+let confirm_submit;

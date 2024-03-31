@@ -1,5 +1,15 @@
 const createAccountSubmit = () => {
+    confirm_submit = false;
+    let first_name = input_container[0];
+    let last_name = input_container[1];
+    let emailid = input_container[2];
+    let date_of_birth = input_container[3];
+    let pin = input_container[4];
+    let confirm_pin = input_container[5];
 
+    if (first_name.length != 0 && last_name.length != 0 && emailid.length != 0 && emailid.contains("@") && date_of_birth.length != 0 && pin.length != 0 && confirm_pin.length != 0) {
+        confirm_submit = true;
+    }
 }
 
 const createAccountClear = () => {
