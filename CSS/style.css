@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(cyan, darkblue, cyan);
+    background-image: linear-gradient(cyan, darkblue, black);
 }
 
 body::-webkit-scrollbar {
